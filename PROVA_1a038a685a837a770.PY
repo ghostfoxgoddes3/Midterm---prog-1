@@ -30,14 +30,14 @@ class Bloco:
     # Método para aplicar uma força no bloco
     def aplica_forca(self, forca):
         if isinstance(forca, Forca):
-            self.p += forca.x * (1 - math.sin(math.radians(self.m)))
-            self.q += forca.y * (1 - math.sin(math.radians(self.m)))
+            self.p += forca.x * (1 - math.sin(self.m)) #a bobona confundiu o domínio de sen e colocou (1 - math.sin(math.radians((self.m)))
+            self.q += forca.y * (1 - math.sin(self.m))
 
     # Método para multiplicar um bloco por uma força usando *=
     def __imul__(self, forca):
         if isinstance(forca, Forca):
-            self.p += forca.x * (1 - math.sin(math.radians(self.m)))
-            self.q += forca.y * (1 - math.sin(math.radians(self.m)))
+            self.p += forca.x * (1 - math.sin(self.m)
+            self.q += forca.y * (1 - math.sin(self.m)
             return self
         return NotImplemented
 
